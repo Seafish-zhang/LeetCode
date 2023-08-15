@@ -8,16 +8,21 @@ package org.zhy;
  */
 public class LeetCode7 {
 
+    public static void main(String[] args) {
+        System.out.println(Integer.MAX_VALUE % 10);
+        System.out.println(Integer.MIN_VALUE % 10);
+    }
+
     public int reverse(int x) {
         int result = 0;
         int tmp = 0;
         while (x != 0) {
             tmp = x % 10;
             //判断溢出（是否大于最大值 2 ^ 31 - 1 = 2147483647 或者 小于最大值 -2 ^ 31 = -2147483648）
-            if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && tmp > 7)) {
+            if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && tmp > Integer.MAX_VALUE % 10)) {
                 return 0;
             }
-            if (result < Integer.MIN_VALUE / 10 || (result == Integer.MIN_VALUE / 10 && tmp < -8)) {
+            if (result < Integer.MIN_VALUE / 10 || (result == Integer.MIN_VALUE / 10 && tmp < Integer.MIN_VALUE % 10)) {
                 return 0;
             }
             result = result * 10 + tmp;
