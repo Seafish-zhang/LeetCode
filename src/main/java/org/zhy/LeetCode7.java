@@ -8,12 +8,6 @@ package org.zhy;
  */
 public class LeetCode7 {
 
-    public static void main(String[] args) {
-
-        System.out.println(Integer.MIN_VALUE / 10);
-        System.out.println(Integer.MAX_VALUE / 10);
-    }
-
     public int reverse(int x) {
         int result = 0;
         int tmp = 0;
