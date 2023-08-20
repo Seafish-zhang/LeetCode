@@ -1,4 +1,4 @@
-package org.zhy;
+package org.zhy.thousand.hundred;
 
 /**
  * 8. 字符串转换整数 (atoi)

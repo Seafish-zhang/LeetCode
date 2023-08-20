@@ -1,4 +1,4 @@
-package org.zhy;
+package org.zhy.thousand.hundred;
 
 /**
  * 9. 回文数
