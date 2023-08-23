@@ -25,4 +25,13 @@ public class LeetCode1137 {
         }
         return dp[n];
     }
+
+    public int tribonacci2(int n) {
+        if (n == 0) return 0;
+        if (n < 3) return 1;
+        int[] tmp = {0, 1, 1};
+        for (int i = 3; i <= n; i++)
+            tmp[i % 3] = tmp[0] + tmp[1] + tmp[2];
+        return tmp[n % 3];
+    }
 }
