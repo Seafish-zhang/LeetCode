@@ -13,13 +13,10 @@ import java.util.List;
  * 请你返回这场考试里你能获得的 最高 分数。
  */
 public class LeetCode2140 {
-    public static void main(String[] args) {
-        new LeetCode2140().mostPoints(new int[][]{{3, 2}, {4, 3}, {4, 4}, {2, 5}});
-    }
 
     public long mostPointsDp(int[][] questions) {
-        int[] dp = new int[questions.length + 1];
-        int max = 0;
+        long[] dp = new long[questions.length + 1];
+        long max = 0;
         for (int i = questions.length - 1; i >= 0; i--) {
             if (questions[i][1] + i + 1 >= questions.length) {
                 dp[i] = Math.max(questions[i][0], dp[i + 1]);
@@ -32,16 +29,16 @@ public class LeetCode2140 {
     }
 
     public long mostPoints(int[][] questions) {
-        List<Integer> result = new ArrayList<>();
+        List<Long> result = new ArrayList<>();
         match(questions, result, 0, 0);
-        int max = 0;
-        for (Integer i : result) {
+        long max = 0;
+        for (Long i : result) {
             max = Math.max(max, i);
         }
         return max;
     }
 
-    private void match(int[][] questions, List<Integer> result, int index, int sum) {
+    private void match(int[][] questions, List<Long> result, int index, long sum) {
         if (index >= questions.length) {
             result.add(sum);
         }
